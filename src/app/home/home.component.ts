@@ -22,9 +22,9 @@ export class HomeComponent {
     },
     {
       index: 2,
-      text: 'Which is  Srija"s favorite make up product?',
-      options: ['Rare Beauty', 'Charlotte Tilbury', 'Alwal Jathara Lip Balm'],
-      correctAnswer: 'Alwal Jathara Lip Balm',
+      text: 'Which is  Srija"s favorite make up destination/brand?',
+      options: ['Rare Beauty', 'Charlotte Tilbury', 'Alwal Jathara to buy beaty blenders'],
+      correctAnswer: 'Alwal Jathara to buy beaty blenders',
     },
     {
       index: 3,
