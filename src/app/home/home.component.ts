@@ -44,7 +44,7 @@ export class HomeComponent {
     },
     {
       index: 5,
-      text: "Will you be Abhay's Valenting?",
+      text: "Will you be Abhay's Valentine?",
       options: ['Yes', 'Yes', 'Yes'],
       correctAnswer: 'Yes',
     },
