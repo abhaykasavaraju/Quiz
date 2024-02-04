@@ -1,0 +1,70 @@
+<mat-card class="example-card">
+  <mat-card-header> Question {{ question.index + 1 }} </mat-card-header>
+  <mat-card-content>
+    <label id="example-radio-group-label">{{ question.text }}</label>
+    <mat-radio-group
+      aria-labelledby="example-radio-group-label"
+      class="example-radio-group"
+      [(ngModel)]="answer"
+    >
+      @for (option of question.options; track option) {
+      <mat-radio-button class="example-radio-button" [value]="option">{{
+        option
+      }}</mat-radio-button>
+      }
+    </mat-radio-group>
+    <div *ngIf="submitted">
+      <div *ngIf="checkCorrectAnswer()">
+        YESSSSS! {{ question.correctAnswer }}
+      </div>
+      <div *ngIf="!checkCorrectAnswer()">
+        NO! Correct Answer is {{ question.correctAnswer }}
+      </div>
+    </div>
+    <mat-divider></mat-divider>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary" (click)="answerClicked()">
+      Submit
+    </button>
+    <button
+      *ngIf="submitted"
+      mat-raised-button
+      color="accent"
+      (click)="nextQuestion()"
+    >
+      Next Question
+    </button>
+  </mat-card-actions>
+</mat-card>
+<!-- <label id="example-radio-group-label">{{ question.text }}</label>
+  <mat-radio-group
+    aria-labelledby="example-radio-group-label"
+    class="example-radio-group"
+    [(ngModel)]="answer"
+  >
+    @for (option of question.options; track option) {
+    <mat-radio-button class="example-radio-button" [value]="option">{{
+      option
+    }}</mat-radio-button>
+    }
+  </mat-radio-group>
+  <button mat-raised-button color="primary" (click)="answerClicked()">
+    Submit
+  </button>
+  <div *ngIf="submitted">
+    <div *ngIf="checkCorrectAnswer()">
+      YESSSSS! {{ question.correctAnswer }}
+    </div>
+    <div *ngIf="!checkCorrectAnswer()">
+      NO! Correct Answer is {{ question.correctAnswer }}
+    </div>
+  </div>
+  <button
+    *ngIf="submitted"
+    mat-raised-button
+    color="secondary"
+    (click)="nextQuestion()"
+  >
+    Next Question
+  </button> -->
